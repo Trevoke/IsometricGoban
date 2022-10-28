@@ -36,6 +36,14 @@ let isometricUI = {
     stone: {
         canvas: () => document.querySelector("#stoneCanvas"),
         visual: () => isometricUI.stone.canvas().getContext("2d"),
+        arrayOfVisualStones: [],
+        keyMapOfVisualStones: {
+            stoneSize: 5,
+            displayColor: {
+                black: 'rgba(0,0,0,1)',
+                white: 'rgba(255,255,255,1)'
+            },
+        }
     },
     board: {
             controller: new BoardController(),
@@ -64,7 +72,7 @@ let stoneInterface = {
     },
     stones: {},
     lastPlaced: undefined,
-    hoveredStone: undefined,
+    stoneKey: undefined,
 }
 
 let jsBoard = new Board();
@@ -74,8 +82,8 @@ stoneInterface.initialize();
 isometricUI.initialize(jsBoard);
 isometricUI.board.controller.draw(jsBoard)
 
-mouse.move();
-mouse.click();
+mouse.setHoverLogic();
+mouse.setUserPlayingAStoneLogic();
 
 
 // modulo modifier, mouse hoveredIntersectioninates, %m/2

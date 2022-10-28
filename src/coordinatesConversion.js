@@ -13,7 +13,7 @@ let inverseMatrixFunction = function () {
     //inverseMatrix[5] = matrix[5];
   };
   
-  let toWorld = function (x, y) {
+  let convertCartesianToIsometric = function (x, y) {
     let xx, yy, result;
     xx = x - matrix[4]; // remove the translation
     yy = y - matrix[5]; // by subtracting the origin

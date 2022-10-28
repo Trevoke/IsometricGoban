@@ -1,6 +1,6 @@
 class Intersection {
   constructor({
-    position,
+    position,    
     canvas = {
       position: {
         x: 0,

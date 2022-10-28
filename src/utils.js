@@ -2,8 +2,8 @@
 // draws on the mouseCanvas
 let stonemouseHover = function (position, aspectratio, radius, color) {
   {
-    mouse.visual().save();
-    mouse.visual()
+    isometricUI.mouse.visual().save();
+    isometricUI.mouse.visual()
       .transform(
         matrix[0],
         matrix[1],
@@ -12,7 +12,7 @@ let stonemouseHover = function (position, aspectratio, radius, color) {
         matrix[4],
         matrix[5]
       );
-    mouse.visual().beginPath();
+    isometricUI.mouse.visual().beginPath();
     mouse
       .visual()
       .arc(
@@ -23,17 +23,17 @@ let stonemouseHover = function (position, aspectratio, radius, color) {
         2 * Math.PI
       );
     if(color === colorType[2]){
-      mouse.visual().strokeStyle = colorType[1];
-      mouse.visual().stroke();
-      mouse.visual().fillStyle = color;
-      mouse.visual().fill();
+      isometricUI.mouse.visual().strokeStyle = colorType[1];
+      isometricUI.mouse.visual().stroke();
+      isometricUI.mouse.visual().fillStyle = color;
+      isometricUI.mouse.visual().fill();
     }
     else {
-      mouse.visual().fillStyle = color;
-      mouse.visual().fill();
+      isometricUI.mouse.visual().fillStyle = color;
+      isometricUI.mouse.visual().fill();
     }
-    mouse.visual().closePath();
-    mouse.visual().restore();
+    isometricUI.mouse.visual().closePath();
+    isometricUI.mouse.visual().restore();
   }
 };
 
@@ -49,7 +49,8 @@ let mouseoverCoordinate = function (mousePosition, circle, aspect, radius) {
 
   if (distance <= radius) {
     return true;
-  } mouse.visual().clearRect(circlePosition.x, circlePosition.y, 0,0);
+  }
+  isometricUI.mouse.visual().clearRect(circlePosition.x, circlePosition.y, 0,0);
 };
 
 
